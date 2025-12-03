@@ -4,13 +4,13 @@ import Home from "../pages/Home.tsx";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: "home",
-        element: <Home />
+        index: true,
+        element: <Home />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);

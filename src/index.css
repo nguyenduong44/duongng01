@@ -1,7 +1,16 @@
 @import "tailwindcss";
-@tailwind base;
-/* Preflight will be injected here */
 
-@tailwind components;
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
 
-@tailwind utilities;
+.animate-blink {
+  animation: blink 1s infinite;
+}
