@@ -10,15 +10,6 @@ export interface DesktopItem {
   contentComponent: ReactNode;
 }
 
-export interface WindowProps {
-  isOpen: boolean;
-  title: string;
-  onClose: () => void;
-  children: ReactNode;
-  iconType: DesktopItem["iconType"];
-  color: string;
-}
-
 export interface DesktopIconProps {
   item: DesktopItem;
   onItemClick: (id: string) => void;
@@ -27,4 +18,13 @@ export interface DesktopIconProps {
 export interface IconRendererProps {
   type: DesktopItem["iconType"];
   className?: string;
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: ReactNode;
+  icon?: ReactNode;
+  headerColor?: string;
 }

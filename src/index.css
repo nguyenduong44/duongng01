@@ -1,4 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-ubuntu: "Ubuntu Mono", monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-ubuntu);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-ubuntu);
+    @apply text-black font-bold;
+  }
+
+  p {
+    font-family: var(--font-ubuntu);
+    @apply text-black/90;
+  }
+}
 
 @keyframes blink {
   0%,
@@ -13,4 +39,36 @@
 
 .animate-blink {
   animation: blink 1s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

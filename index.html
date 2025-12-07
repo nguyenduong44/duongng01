@@ -5,41 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>duongng01</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              desktop: {
-                start: "#1a1b4b", // Indigo-950/900 mix
-                end: "#2e3085", // Blue-800 mix
-                accent: "#8b5cf6", // Violet-500
-              },
-            },
-            animation: {
-              float: "float 6s ease-in-out infinite",
-              "pop-in": "popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-              "fade-in-down": "fadeInDown 0.8s ease-out",
-            },
-            keyframes: {
-              float: {
-                "0%, 100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-20px)" },
-              },
-              popIn: {
-                "0%": { opacity: "0", transform: "scale(0.9)" },
-                "100%": { opacity: "1", transform: "scale(1)" },
-              },
-              fadeInDown: {
-                "0%": { opacity: "0", transform: "translateY(-20px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              },
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="/src/index.css" />
   </head>
   <body>
     <div id="root"></div>
