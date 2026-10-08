@@ -1,82 +1,39 @@
-import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import type * as THREE from "three";
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF("public/3d_model.glb");
+type GLTFResult = {
+  nodes: Record<string, THREE.Mesh>;
+  materials: Record<string, THREE.Material>;
+};
+
+const PARTS: Array<[node: string, material: string]> = [
+  ["mousepad", "M_lam_teal"],
+  ["keyboard_1", "M_lam_browngreylighter"],
+  ["keyboard_2", "M_plastic_bone"],
+  ["keyboard_keys", "M_lam_browngreylighter"],
+  ["mouse_1", "M_plastic_bone"],
+  ["mouse_2", "M_lam_browngrey"],
+  ["monitor_and_body_1", "M_plastic_bone"],
+  ["monitor_and_body_2", "M_lam_darkgrey"],
+  ["monitor_and_body_3", "M_plastic_bone_shad"],
+  ["monitor_and_body_4", "M_screen_blue"],
+  ["face", "M_lam_black"],
+  ["face_shadow", "M_screen_whitetext"],
+];
+
+export function Model(props: React.ComponentProps<"group">) {
+  const { nodes, materials } = useGLTF("/3d_model.glb") as unknown as GLTFResult;
   return (
     <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.mousepad.geometry}
-        material={materials.M_lam_teal}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.keyboard_1.geometry}
-        material={materials.M_lam_browngreylighter}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.keyboard_2.geometry}
-        material={materials.M_plastic_bone}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.keyboard_keys.geometry}
-        material={materials.M_lam_browngreylighter}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.mouse_1.geometry}
-        material={materials.M_plastic_bone}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.mouse_2.geometry}
-        material={materials.M_lam_browngrey}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.monitor_and_body_1.geometry}
-        material={materials.M_plastic_bone}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.monitor_and_body_2.geometry}
-        material={materials.M_lam_darkgrey}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.monitor_and_body_3.geometry}
-        material={materials.M_plastic_bone_shad}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.monitor_and_body_4.geometry}
-        material={materials.M_screen_blue}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.face.geometry}
-        material={materials.M_lam_black}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.face_shadow.geometry}
-        material={materials.M_screen_whitetext}
-      />
+      {PARTS.map(([node, material]) => (
+        <mesh
+          key={node}
+          castShadow
+          receiveShadow
+          geometry={nodes[node].geometry}
+          material={materials[material]}
+        />
+      ))}
     </group>
   );
 }

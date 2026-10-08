@@ -1,0 +1,58 @@
+import type { Product } from "./types";
+
+export const PRODUCTS: Product[] = [
+  {
+    slug: "react-template",
+    name: "react-template",
+    price: "120,000đ",
+    description: "A minimal React + TypeScript starter with routing and lint preconfigured.",
+    includes: ["Vite + React + TS setup", "Router + ESLint config", "README with deploy guide"],
+    format: ".zip, 2 MB",
+    license: "Single project",
+  },
+  {
+    slug: "icon-pack",
+    name: "icon-pack",
+    price: "250,000đ",
+    description: "120 hand-drawn folder and file icons in a muted retro style.",
+    includes: ["120 SVG icons", "PNG @1x and @2x", "Figma source file"],
+    format: ".zip, 15 MB",
+    license: "Personal + commercial",
+  },
+  {
+    slug: "wallpaper-pack",
+    name: "wallpaper-pack",
+    price: "50,000đ",
+    description: "10 calm desktop wallpapers: mountains, paper texture, muted sun.",
+    includes: ["10 wallpapers", "4K and 1080p sizes"],
+    format: ".zip, 40 MB",
+    license: "Personal use",
+  },
+  {
+    slug: "notebook",
+    name: "notebook",
+    price: "80,000đ",
+    description: "A plain paper notebook for sketching UIs. Ships nowhere yet — mock item.",
+    includes: ["64 blank pages", "Pretend shipping"],
+    format: "Physical (mock)",
+    license: "Yours forever",
+  },
+  {
+    slug: "sticker-set",
+    name: "sticker-set",
+    price: "30,000đ",
+    description: "Laptop stickers: folders, terminals, and one tiny Mt. Fuji.",
+    includes: ["8 vinyl stickers"],
+    format: "Physical (mock)",
+    license: "Stick anywhere",
+  },
+  {
+    slug: "coming-soon",
+    name: "more soon",
+    price: "-",
+    description: "More small things are on the way.",
+    includes: [],
+    format: "-",
+    license: "-",
+  },
+];

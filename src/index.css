@@ -3,11 +3,24 @@
 
 @theme {
   --font-ubuntu: "Ubuntu Mono", monospace;
+  --font-doc: Georgia, "Times New Roman", serif;
+
+  --color-paper: #f2eee3;
+  --color-ivory: #faf7ee;
+  --color-ink: #2b2a26;
+  --color-muted: #7a7568;
+  --color-line: #d6cfbc;
+  --color-titlebar: #7c8da0;
+  --color-titlebar-dark: #5f7185;
+  --color-accent: #c05f3c;
+  --color-select: #e9e2d0;
 }
 
 @layer base {
   body {
     font-family: var(--font-ubuntu);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
   }
 
   h1,
@@ -17,12 +30,13 @@
   h5,
   h6 {
     font-family: var(--font-ubuntu);
-    @apply text-black font-bold;
+    color: var(--color-ink);
+    font-weight: 700;
   }
 
   p {
     font-family: var(--font-ubuntu);
-    @apply text-black/90;
+    color: var(--color-ink);
   }
 }
 
@@ -39,36 +53,4 @@
 
 .animate-blink {
   animation: blink 1s infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
